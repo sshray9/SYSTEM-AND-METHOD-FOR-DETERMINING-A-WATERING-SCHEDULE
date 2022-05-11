@@ -1,0 +1,19 @@
+int water; //random variable
+void setup()
+{
+pinMode(3,OUTPUT); //output pin for relay board, this will send signal to the relay pinMode(6,INPUT); //input pin coming from soil moisture sensor
+[42]
+}
+void loop()
+{
+water = digitalRead(6); // reading the incoming signal from the soil moisture sensor
+if(water == HIGH) // if water level is full then cut off the relay
+{
+digitalWrite(3,LOW); // if low then cut off the relay
+}
+else
+{
+digitalWrite(3,HIGH); //if high then water is supplied
+}
+delay(400);
+}
